@@ -8,9 +8,23 @@
       <link href="2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
       <url>2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>test</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>测试一下看不看得见</p>]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
+            
+        </tags>
       
     </entry>
     
