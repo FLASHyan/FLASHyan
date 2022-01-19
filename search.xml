@@ -8,7 +8,7 @@
       <link href="2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/"/>
       <url>2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="text-align属性"><a href="#text-align属性" class="headerlink" title="text-align属性"></a>text-align属性</h2><blockquote><p><code>text-align</code> 属性可以控制文本的对齐方式</p></blockquote><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">text-align</span>: justify;将文本隔开，使每行的宽度相等</span><br><span class="line"><span class="attribute">text-align</span>: center;可以让文本居中对齐</span><br><span class="line"><span class="attribute">text-align</span>: right;可以让文本右对齐</span><br><span class="line"><span class="attribute">text-align</span>: left;是默认值，它可以让文本左对齐</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
