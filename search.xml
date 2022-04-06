@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>lowBit与质数优化</title>
+      <link href="2022/04/04/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <url>2022/04/04/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="lowBit"><a href="#lowBit" class="headerlink" title="lowBit"></a>lowBit</h1><p><strong>lowBit</strong>一般用在树状数组里，主要功能是: 找到x的二进制数的最后一个1所表示的二进制</p><p>比如x=6=00000110 (2)，-x=x(补)=11111010(2)，lowBit(x)=10(2)=2</p><p>也就是说,就是lowbit(x)的值必然是<strong>2的幂次</strong>(最高位为1,其他位为0)</p><table><thead><tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr></thead><tbody><tr><td>lowbit(x)</td><td>1</td><td>2</td><td>1</td><td>4</td><td>1</td><td>2</td><td>1</td><td>8</td><td>1</td></tr></tbody></table><ul><li>注意: x不能等于0, 否则会进入死循环, 所以树状数组通常使用的下标会执行+1操作</li></ul><blockquote><p>lowbit只有一行操作，而且是位运算，效率很高</p></blockquote><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">lowBit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>具体的应用后面在树状数组里讲</p><h1 id="质数优化"><a href="#质数优化" class="headerlink" title="质数优化"></a>质数优化</h1><p>之前在LeetCode里看到这么一个题</p><blockquote><p>给两个整数 <code>left</code> 和 <code>right</code> ，在闭区间 <code>[left, right]</code> 范围内，统计并返回 <strong>计算置位位数为质数</strong> 的整数个数。</p><ul><li><code>1 &lt;= left &lt;= right &lt;= 10^6^</code></li><li><code>0 &lt;= right - left &lt;= 10^4^</code></li></ul></blockquote><p>ep：6的二进制为110，有2个计算置位</p><h2 id="质数优化思路"><a href="#质数优化思路" class="headerlink" title="质数优化思路"></a>质数优化思路</h2><p>可以注意到right&lt;=10^6^&lt;2^20^，能知道的是二进制中1的个数不会超过19，不超过19的质数有 2,3,5,7,11,13,17,19；</p><p>可以用mask=10100010100010101100(2)=665772来存储这些质数，从低到高第i位为1表示i为质数</p><p>设整数 x 的二进制中 1 的个数为 c，若 mask按位与 2^c^ 不为 0，则说明 c是一个质数</p><blockquote><p>可以用 1 &lt;&lt; c来表示2^c^</p></blockquote><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countPrimeSetBits</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = left;x &lt;= right;++x)&#123;</span><br><span class="line">            <span class="keyword">if</span>(((<span class="number">1</span> &lt;&lt; Integer.bitCount(x)) &amp; <span class="number">665772</span>) !=<span class="number">0</span>)&#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>Integer.bitCount( int i)</code> 这个方法是jdk自带的帮我们快速统计i转成二进制补码后，其中二进制数中包含1的数量</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS布局整理</title>
       <link href="2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/"/>
       <url>2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/</url>
