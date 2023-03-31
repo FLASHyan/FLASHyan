@@ -4,16 +4,16 @@
   
     
     <entry>
-      <title>各向异性扩散滤波</title>
+      <title>BitmapData</title>
       <link href="2022/09/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
       <url>2022/09/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先码住</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Bitmap图片处理的效率"><a href="#Bitmap图片处理的效率" class="headerlink" title="Bitmap图片处理的效率"></a>Bitmap图片处理的效率</h2><ol><li><p>在对图片进行处理时，如果每次都对 Bitmap 的对象直接处理，效率不高</p><blockquote><p><strong>原因：</strong>因为 bitmap 存储在内存中时，它的每一个像素点是被压缩编码过的，这种编码方式使得直接对其操作需要进行解压缩、编码等操作，增加了处理的时间和复杂度。而对于一些常见的图像处理操作（如旋转、裁剪、缩放等），可以使用一些专门优化过的算法，避免直接对位图数据进行操作，从而提高处理效率。此外，还可以使用硬件加速技术（如使用GPU）来加速位图处理。</p></blockquote></li><li><p>改进的一些方法，在每次处理图像之前，对其进行 lock ，生成对应的 BitmapData 对象</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">Rectangle rect = <span class="keyword">new</span> Rectangle(<span class="number">0</span>, <span class="number">0</span>, bmp.Width, bmp.Height);</span><br><span class="line">BitmapData bmd = bmp.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);</span><br></pre></td></tr></table></figure><p>类似于上面这种</p><blockquote><p><strong>注：</strong>BitmapData 类是将 Bitmap 里面的像素映射成为一个一维数组，Bitmap 中一个像素为 4bytes ，分别对应为 ARGB ,而 BitmapData 中 4bytes 中颜色的排列顺序为 BGRA 。</p><ul><li>Scan0 是该一维数组对应的首地址，采用 <code>BYTE* m_p=(BYTE*)srcBitmapData.Scan0;</code> 就可以按颜色对一维数组中的像素进行访问。例如：<code>*m_p</code>为蓝色，<code>*(m_p+1)</code>为绿色</li><li><code>srcBitmapData.Width</code> ,  <code>srcBitmapData.Height</code> , 分别为原来二维数组中的宽、高</li><li><u><code>srcBitmapData.Stride</code></u>, 为一行的字节数，且为4的整数倍，如果不足末尾会不成4的倍数。故对 Bitmap 中的 [i][j]处的蓝色可以这样访问 <code>(j*srcBitmapData.Stride)+4*i; </code></li></ul></blockquote></li><li><p>内存释放问题</p></li><li><p><code>SrcBmp.UnlockBits(SrcBmpData);</code> 记得要释放图像，才能对 SrcBmp 进行操作</p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 随手记 </category>
           
       </categories>
       
