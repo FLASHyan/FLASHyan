@@ -11,13 +11,13 @@
 <meta property="article:author" content="ほうたろう">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg"><link rel="shortcut icon" href="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/favicon.png"><link rel="canonical" href="https://flashyan.github.io/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><meta/><link rel="stylesheet" href="/FLASHyan/css/index.css?v=4.8.0-b2"><link rel="stylesheet" href="/FLASHyan/" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg"><link rel="shortcut icon" href="/FLASHyan/img/favicon.png"><link rel="canonical" href="https://flashyan.github.io/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/FLASHyan/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/FLASHyan/',
   algolia: undefined,
-  localSearch: {"path":"/FLASHyan/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  localSearch: undefined,
+  translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":"600px"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -27,7 +27,7 @@
     homepage: false,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   date_suffix: {
     just: '刚刚',
     min: '分钟前',
@@ -35,16 +35,16 @@
     day: '天前',
     month: '个月前'
   },
-  copyright: {"limitCount":50,"languages":{"author":"作者: ほうたろう","link":"链接: ","source":"来源: 银河系漫游指南","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
-  lightbox: 'mediumZoom',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
   source: {
     justifiedGallery: {
-      js: '/FLASHyan/',
-      css: '/FLASHyan/'
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
   },
-  isPhotoFigcaption: true,
+  isPhotoFigcaption: false,
   islazyload: false,
   isAnchor: false,
   percent: {
@@ -143,27 +143,8 @@
       }
       const t = saveToLocal.get('theme')
     
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
@@ -180,14 +161,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><script>window.paceOptions = {
-  restartOnPushState: false
-}
-
-document.addEventListener('pjax:send', () => {
-  Pace.restart()
-})
-</script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace-theme-default.min.css"/><script src="/FLASHyan/"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/touxiang.4upi48hbidm0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/FLASHyan/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/FLASHyan/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/FLASHyan/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FLASHyan/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg')"><nav id="nav"><span id="blog-info"><a href="/FLASHyan/" title="银河系漫游指南"><span class="site-name">银河系漫游指南</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FLASHyan/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">暴雨将至</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-22T16:00:00.000Z" title="发表于 2021-04-23 00:00:00">2021-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-31T09:22:15.972Z" title="更新于 2023-03-31 17:22:15">2023-03-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/FLASHyan/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="暴雨将至"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>&ensp;&ensp;&ensp;&ensp;天台上又刮起了风。</p>
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/FLASHyan/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/FLASHyan/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/FLASHyan/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FLASHyan/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg')"><nav id="nav"><span id="blog-info"><a href="/FLASHyan/" title="银河系漫游指南"><span class="site-name">银河系漫游指南</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FLASHyan/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/FLASHyan/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">暴雨将至</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-22T16:00:00.000Z" title="发表于 2021-04-23 00:00:00">2021-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-31T09:22:15.972Z" title="更新于 2023-03-31 17:22:15">2023-03-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/FLASHyan/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="暴雨将至"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>&ensp;&ensp;&ensp;&ensp;天台上又刮起了风。</p>
 <p>&ensp;&ensp;&ensp;&ensp;我站在一角，看着不知谁家的被单被风拍打地上下翻飞，开始有些担心，害怕它会被卷入这股风里，从这高处滑翔下去。风钻入我上身唯一一件白格子短袖中，头发也不听使唤地胡乱飘着。</p>
 <p>&ensp;&ensp;&ensp;&ensp;闷燥的夏月，即使有风，我也能感受到一丝压迫感。天上的流云一块接一块，在仅存的微弱阳光中穿梭，终于连那最后一道光，也渐渐被吞噬掉。而我已经回到了室内走道，玻璃窗被急躁的风儿肆意敲打，我从裤兜里摸出一盒烟，快速点上一支，想在风的谢幕表演前把心中的气和烟一起吐出来，我眯着眼，望着这条狭长的走道，还没到开灯的点，这里看着就像个洗照片房里的暗室，远处只有紧急通道的灯光还在支撑，我很幸运，还能从这出去。</p>
 <p>&ensp;&ensp;&ensp;&ensp;我掐灭了手里的烟，犹豫了一下，把它扔进了垃圾桶，顺手从上衣口袋中掏出了两条口香糖，我把它们塞进嘴里，糖纸被我揉成一团，一抛，没有一点声响，就落进了桶里。我径直穿过走道，直到那微弱的光从我头上掠过。</p>
@@ -248,118 +222,4 @@ document.addEventListener('pjax:send', () => {
 <hr>
 <p>&ensp;&ensp;&ensp;&ensp;END</p>
 <p>&ensp;&ensp;&ensp;&ensp;(本文由歌曲 fun/Coldplay和rainy dumplings/饭碗的彼岸 所感而写)</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://flashyan.github.io/FLASHyan">ほうたろう</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://flashyan.github.io/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/">https://flashyan.github.io/FLASHyan/2021/04/23/暴雨将至/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://flashyan.github.io/FLASHyan" target="_blank">银河系漫游指南</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/FLASHyan/tags/%E9%9A%8F%E7%AC%94/">随笔</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/FLASHyan/" media="print" onload="this.media='all'"><script src="/FLASHyan/" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/FLASHyan/2021/04/24/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="从零开始搭建博客(hexo+github)"><img class="cover" src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/boke4.24.3inhn75pxpk0.jpg" onerror="onerror=null;src='/FLASHyan/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">从零开始搭建博客(hexo+github)</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/touxiang.4upi48hbidm0.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ほうたろう</div><div class="author-info__description">大音希声，大象无形</div></div><div class="card-info-data site-data is-center"><a href="/FLASHyan/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/FLASHyan/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/FLASHyan/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FLASHyan"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FLASHyan" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yl3224393116@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎阅读银河系漫游指南，祝您旅途愉快</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/09/17/BitmapData/" title="BitmapData"><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/备用8.450flx8uex60.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="BitmapData"/></a><div class="content"><a class="title" href="/FLASHyan/2022/09/17/BitmapData/" title="BitmapData">BitmapData</a><time datetime="2022-09-17T06:07:10.000Z" title="发表于 2022-09-17 14:07:10">2022-09-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/" title="lowBit与质数优化"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-04-06.fx9uof9xix4.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="lowBit与质数优化"/></a><div class="content"><a class="title" href="/FLASHyan/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/" title="lowBit与质数优化">lowBit与质数优化</a><time datetime="2022-04-04T11:52:38.000Z" title="发表于 2022-04-04 19:52:38">2022-04-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/" title="CSS布局整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-01-23.qdssqzvz3s0.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="CSS布局整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/" title="CSS布局整理">CSS布局整理</a><time datetime="2022-01-23T06:08:19.000Z" title="发表于 2022-01-23 14:08:19">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/" title="视觉设计整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-1-15.74nacno3h2o0.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="视觉设计整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/" title="视觉设计整理">视觉设计整理</a><time datetime="2022-01-14T16:00:00.000Z" title="发表于 2022-01-15 00:00:00">2022-01-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" title="CSS基础整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-01-12.447d0veajl8.webp" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="CSS基础整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" title="CSS基础整理">CSS基础整理</a><time datetime="2022-01-10T07:59:13.000Z" title="发表于 2022-01-10 15:59:13">2022-01-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ほうたろう</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to The Hitchhiker's Guide to the Galaxy</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/FLASHyan/js/utils.js?v=4.8.0-b2"></script><script src="/FLASHyan/js/main.js?v=4.8.0-b2"></script><script src="/FLASHyan/js/tw_cn.js?v=4.8.0-b2"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/medium-zoom/1.0.6/medium-zoom.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.autoSpacingPage()
-  else {
-    getScript('https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/pangu/4.0.7/pangu.min.js')
-      .then(() => {
-        pangu.autoSpacingPage()
-      })
-  }
-}
-
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
-
-document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>function loadValine () {
-  function initValine () {
-    const valine = new Valine(Object.assign({
-      el: '#vcomment',
-      appId: 'wkcWSg2oOOMBt7LaHeoouaHb-gzGzoHsz',
-      appKey: 'zxlXaI2VRwBMPH22raj3YbWi',
-      avatar: 'monsterid',
-      serverURLs: '',
-      emojiMaps: "",
-      path: window.location.pathname,
-      visitor: false
-    }, null))
-  }
-
-  if (typeof Valine === 'function') initValine() 
-  else getScript('https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/valine/1.4.16/Valine.min.js').then(initValine)
-}
-
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
-  else setTimeout(loadValine, 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
-  }
-}</script></div><script defer="defer" id="ribbon" src="/FLASHyan/" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="/FLASHyan/"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/FLASHyan/"></script><script src="/FLASHyan/"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script id="click-heart" src="/FLASHyan/" async="async" mobile="false"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
-
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
-})
-
-document.addEventListener('pjax:send', function () {
-
-  // removeEventListener scroll 
-  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
-  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
-
-  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
-  
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
-
-  typeof typed === 'object' && typed.destroy()
-
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
-
-  typeof disqusjs === 'object' && disqusjs.destroy()
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof chatBtnFn === 'function' && chatBtnFn()
-  typeof panguInit === 'function' && panguInit()
-
-  // google analytics
-  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
-
-  // baidu analytics
-  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-})
-
-document.addEventListener('pjax:error', (e) => {
-  if (e.request.status === 404) {
-    pjax.loadUrl('/404.html')
-  }
-})</script><script async data-pjax src="https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/FLASHyan/js/search/local-search.js?v=4.8.0-b2"></script></div></div></body></html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://flashyan.github.io/FLASHyan">ほうたろう</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://flashyan.github.io/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/">https://flashyan.github.io/FLASHyan/2021/04/23/%E6%9A%B4%E9%9B%A8%E5%B0%86%E8%87%B3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://flashyan.github.io/FLASHyan" target="_blank">银河系漫游指南</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/FLASHyan/tags/%E9%9A%8F%E7%AC%94/">随笔</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/clouds-5280576_1920.4ltsfwqxyf40.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/FLASHyan/2021/04/24/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="从零开始搭建博客(hexo+github)"><img class="cover" src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/boke4.24.3inhn75pxpk0.jpg" onerror="onerror=null;src='/FLASHyan/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">从零开始搭建博客(hexo+github)</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/FLASHyan/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ほうたろう</div><div class="author-info__description">大音希声，大象无形</div></div><div class="card-info-data site-data is-center"><a href="/FLASHyan/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/FLASHyan/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/FLASHyan/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/09/17/BitmapData/" title="BitmapData"><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/备用8.450flx8uex60.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="BitmapData"/></a><div class="content"><a class="title" href="/FLASHyan/2022/09/17/BitmapData/" title="BitmapData">BitmapData</a><time datetime="2022-09-17T06:07:10.000Z" title="发表于 2022-09-17 14:07:10">2022-09-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/" title="lowBit与质数优化"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-04-06.fx9uof9xix4.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="lowBit与质数优化"/></a><div class="content"><a class="title" href="/FLASHyan/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/" title="lowBit与质数优化">lowBit与质数优化</a><time datetime="2022-04-04T11:52:38.000Z" title="发表于 2022-04-04 19:52:38">2022-04-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/" title="CSS布局整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-01-23.qdssqzvz3s0.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="CSS布局整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/23/CSS%E5%B8%83%E5%B1%80%E6%95%B4%E7%90%86/" title="CSS布局整理">CSS布局整理</a><time datetime="2022-01-23T06:08:19.000Z" title="发表于 2022-01-23 14:08:19">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/" title="视觉设计整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-1-15.74nacno3h2o0.jpg" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="视觉设计整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/15/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E6%95%B4%E7%90%86/" title="视觉设计整理">视觉设计整理</a><time datetime="2022-01-14T16:00:00.000Z" title="发表于 2022-01-15 00:00:00">2022-01-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FLASHyan/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" title="CSS基础整理"><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/2022-01-12.447d0veajl8.webp" onerror="this.onerror=null;this.src='/FLASHyan/img/404.jpg'" alt="CSS基础整理"/></a><div class="content"><a class="title" href="/FLASHyan/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" title="CSS基础整理">CSS基础整理</a><time datetime="2022-01-10T07:59:13.000Z" title="发表于 2022-01-10 15:59:13">2022-01-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ほうたろう</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/FLASHyan/js/utils.js"></script><script src="/FLASHyan/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
