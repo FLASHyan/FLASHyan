@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS基础整理</title>
+    <url>/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h2 id="更改文本颜色"><a href="#更改文本颜色" class="headerlink" title="更改文本颜色"></a>更改文本颜色</h2><blockquote>
+<p>修改<code>h2</code>元素的<code>style</code>属性来改变文本颜色，需要修改<code>color</code>属性值。需要在内联 <code>style</code> 声明末尾加上 <code>;</code></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot; color: red;&quot;</span>&gt;</span> 更改颜色 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h2><blockquote>
+<p>在代码的顶部，创建一个 <code>style</code> 声明区域</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"> </span></span><br><span class="line"><span class="language-css">   <span class="selector-tag">h2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span> :blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以为所有的<code>h2</code>元素创建一个<em>css selector</em></p>
+<h2 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h2><blockquote>
+<p>CSS 的 class 具有可重用性，可应用于各种 HTML 元素，class选择器可设置单个元素的样式，以<code>.</code>为句首</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">   <span class="selector-class">.red-text</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;red-txet&quot;</span>&gt;</span> 文本 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="内外边距、边框"><a href="#内外边距、边框" class="headerlink" title="内外边距、边框"></a>内外边距、边框</h2><h3 id="添加边框"><a href="#添加边框" class="headerlink" title="添加边框"></a>添加边框</h3><blockquote>
+<p>CSS 边框具有 <code>style</code>、<code>color</code>、<code>width</code> 属性</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">   .border &#123;</span></span><br><span class="line"><span class="language-xml">     border-color: red;</span></span><br><span class="line"><span class="language-xml">     border-width: 5px;</span></span><br><span class="line"><span class="language-xml">     border-style: solid;  <span class="comment">&lt;!--实线--&gt;</span></span></span><br><span class="line"><span class="language-xml">     border-radius: 10px;  <span class="comment">&lt;!--边框圆角程度，也可以设置成50%--&gt;</span></span></span><br><span class="line"><span class="language-xml">   &#125;</span></span><br><span class="line"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>记得在一个元素上可以同时应用多个 <code>class</code>，使用空格来分隔不同 class 即可</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot; class1 class2&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><blockquote>
+<p>内边距<code>padding</code>，<code>padding</code> 用来控制着元素内容与 <code>border</code> 之间的空隙大小，还可以设置四个不同方向的 <code>padding</code> 值</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">padding-top: 10px;</span><br><span class="line">padding-left: 10px;</span><br><span class="line">padding-right: 20px;</span><br><span class="line">padding-bottom: 20px;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D.6telm81o1v40.webp" alt="内外边距"></p>
+<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><blockquote>
+<p>外边距 <code>margin</code> 用来控制元素的边框与其他元素之间的 <code>border</code> 距离，增加蓝色的 <code>margin</code> 值，它也会增加元素边框到其他周围元素的距离</p>
+</blockquote>
+<p>在内外边距的设置里，可以按照<strong>顺时针</strong>顺序进行排序：上、右、下、左</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">padding: 10px 20px 10px 20px;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><blockquote>
+<p>使用 <code>[attr=value]</code> 属性选择器</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-attr">[type=<span class="string">&#x27;radio&#x27;</span>]</span> &#123;</span><br><span class="line">   <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="继承样式"><a href="#继承样式" class="headerlink" title="继承样式"></a>继承样式</h2><blockquote>
+<p>设置 <code>body</code> 元素样式的方法跟设置其他 HTML 元素样式的方式一样，并且其他元素也会继承 <code>body</code> 中所设置的样式</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">background</span>: black;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">font-family</span>: monospace;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">   Hello World</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Class 选择器的优先级高于继承样式</strong></p>
+</li>
+<li><p><strong>ID 选择器优先级高于 Class 选择器</strong></p>
+</li>
+<li><p><strong>内联样式的优先级高于 ID 选择器</strong></p>
+</li>
+<li><p><strong>Important 的优先级最高</strong>(<code>!important</code>)</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">id</span>=<span class="string">&quot;orange-text&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">&quot;pink-text blue-text&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;color: white&quot;</span>  &lt;!<span class="attr">--行内样式--</span>&gt;</span></span><br><span class="line">&gt;</span><br><span class="line">    Hello World!</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义CSS变量"><a href="#自定义CSS变量" class="headerlink" title="自定义CSS变量"></a>自定义CSS变量</h2><blockquote>
+<p>为创建一个 CSS 变量，只需要在变量名前添加两个连字符号，并为其赋值即可</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attr">--penguin-skin</span>: gray;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用自定义CSS变量"><a href="#使用自定义CSS变量" class="headerlink" title="使用自定义CSS变量"></a>使用自定义CSS变量</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">var</span>(--penguin-skin);</span><br></pre></td></tr></table></figure>
+
+<p>除非变量名称完全匹配，否则将不会应用样式</p>
+<h3 id="CSS变量设置备用值"><a href="#CSS变量设置备用值" class="headerlink" title="CSS变量设置备用值"></a>CSS变量设置备用值</h3><blockquote>
+<p>使用变量来作为 CSS 属性值的时候，可以设置一个备用值来防止由于某些原因导致变量不生效的情况</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">var</span>(--penguin-skin, balck)</span><br></pre></td></tr></table></figure>
+
+<p>备用值不是用于增强浏览器的兼容性，它也不适用于 IE 浏览器。 相反，它是用来让浏览器在找不到你的变量时可以显示一种颜色</p>
+<h3 id="继承CSS变量"><a href="#继承CSS变量" class="headerlink" title="继承CSS变量"></a>继承CSS变量</h3><blockquote>
+<p>CSS 变量经常会定义在 :root 元素内，这样就可被所有选择器继承</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">   <span class="attr">--penguin-belly</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>:root</code> 是一个伪类选择器，它是一个能够匹配文档根元素的选择器，通常指的是 <code>html</code> 元素。 在 <code>:root</code> 里创建变量在全局都可用，即在任何选择器里都生效</p>
+<p>如果在元素里创建相同的变量，会<strong>重写</strong>作用于整个页面的变量的值</p>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><blockquote>
+<p>当屏幕小于或大于媒体查询所设置的值，只要更新变量的值，那么使用了此变量的元素样式就都会更改</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">350px</span>)&#123;</span><br><span class="line">  <span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">     ****</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片自适应设备尺寸"><a href="#图片自适应设备尺寸" class="headerlink" title="图片自适应设备尺寸"></a>图片自适应设备尺寸</h2><blockquote>
+<p>设置 <code>max-width</code> 值为 <code>100%</code> 可确保图片不超出父容器的范围；设置 <code>height</code> 属性为 <code>auto</code> 可以保持图片的原始宽高比</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">  <span class="attribute">max-width</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="排版随尺寸响应"><a href="#排版随尺寸响应" class="headerlink" title="排版随尺寸响应"></a>排版随尺寸响应</h2><blockquote>
+<p>可以用视窗单位来做响应式排版，视窗单位和百分比都是相对单位，但它们是基于不同的参照物</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">width</span>: <span class="number">30vw</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>vw</code>：如 <code>10vw</code> 的意思是视窗宽度的 10%。</li>
+<li><code>vh：</code> 如 <code>3vh</code> 的意思是视窗高度的 3%。</li>
+<li><code>vmin：</code> 如 <code>70vmin</code> 的意思是视窗的高度和宽度中较小一个的 70%。</li>
+<li><code>vmax：</code> 如 <code>100vmax</code> 的意思是视窗的高度和宽度中较大一个的 100%。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BitmapData</title>
     <url>/2022/09/17/BitmapData/</url>
     <content><![CDATA[<h2 id="Bitmap图片处理的效率"><a href="#Bitmap图片处理的效率" class="headerlink" title="Bitmap图片处理的效率"></a>Bitmap图片处理的效率</h2><ol>
@@ -35,6 +149,100 @@
       </categories>
       <tags>
         <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML标签整理</title>
+    <url>/2022/01/08/HTML%E6%A0%87%E7%AD%BE%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>整理一些HTML的标签</p>
+<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">  副标题</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>h1、h2这一类表示的正标题副标题的标签</p>
+<h2 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  段落标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>所有的<code>img</code>元素必须有<code>alt</code>属性，<code>alt </code>的属性值有两个作用，<strong>第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本</strong></p>
+<h2 id="网页跳转"><a href="#网页跳转" class="headerlink" title="网页跳转"></a>网页跳转</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span> 网页跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>网页的跳转分为外部链接和内部链接，当是外部链接时，可以是对应的URL，当是内部链接时，<code>href=&quot;#xxx&quot;</code>，要在xxx前加上一个<code>#</code>，而xxx对应的是元素的<code>id</code></p>
+<h2 id="无序列表和有序列表"><a href="#无序列表和有序列表" class="headerlink" title="无序列表和有序列表"></a>无序列表和有序列表</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> 无序列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  <span class="comment">&lt;!--无序列表--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> 有序列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="comment">&lt;!-- 有序列表--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;&quot;</span> <span class="attr">required</span>&gt;</span> <span class="comment">&lt;!-- 占位符文本placeholder-&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>input</code>输入框是没有结束标签的</p>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>可以只通过 HTML 来实现发送数据给服务器的表单， 只需要给 <code>form</code> 元素添加 <code>action</code> 属性即可</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">required</span>&gt;</span>  <span class="comment">&lt;!--必选字段--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">    提交按钮</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="单选和复选"><a href="#单选和复选" class="headerlink" title="单选和复选"></a>单选和复选</h3><blockquote>
+<p>每一个单选和复选都要嵌套在<code>label</code>标签里，设置上<code>for</code>属性，让其值与关联的<code>input</code>的<code>id</code>属性值相同；所有关联的单选和复选都应该有相同的<code>name</code>属性</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;danxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>单选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fuxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>复选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提交表单时，所选项的值会发送给服务端。 <code>radio</code> 和 <code>checkbox</code> 的 <code>value</code> 属性值决定了发送到服务端的实际内容</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;danxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">value</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>单选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fuxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">value</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>复选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>input</code>中添加<code>checked</code>属性表示单选和复选框有默认选择</p>
+<h2 id="内容划分元素"><a href="#内容划分元素" class="headerlink" title="内容划分元素"></a>内容划分元素</h2><blockquote>
+<p><code>div</code> 元素也叫内容划分元素，是一个包裹其他元素的通用容器。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML5标签"><a href="#HTML5标签" class="headerlink" title="HTML5标签"></a>HTML5标签</h2><h3 id="article标签"><a href="#article标签" class="headerlink" title="article标签"></a>article标签</h3><blockquote>
+<p><code>article</code> 是一个分段标签，用于呈现独立及完整的内容。 这个标签适用于博客、论坛帖子或者新闻文章</p>
+</blockquote>
+<p><code>section</code> 元素也是 HTML5 引入的新元素，其语义与 <code>article</code> 略有不同。 <code>article</code> 用于独立且完整的内容，而 <code>section</code> 用于对与主题相关的内容进行分组。 它们可以根据需要来嵌套使用</p>
+<h3 id="header标签"><a href="#header标签" class="headerlink" title="header标签"></a>header标签</h3><blockquote>
+<p><code>header</code> 也是一个具有语义化的、可以提升页面可访问性的 HTML5 标签。 它可以为父级标签呈现简介信息或者导航链接，适用于那些在多个页面顶部重复出现的内容</p>
+</blockquote>
+<p>与 <code>main</code> 类似，<code>header</code> 的语义化特性也可以让辅助工具快速定位到它的内容</p>
+<h3 id="nav标签和footer标签"><a href="#nav标签和footer标签" class="headerlink" title="nav标签和footer标签"></a>nav标签和footer标签</h3><blockquote>
+<p><code>nav</code> 也是一个具有语义化特性的 HTML5 标签，它可以使屏幕阅读器快速识别出页面中的导航信息。 它用于呈现页面中的主导航链接</p>
+</blockquote>
+<p><code>footer</code> 元素也具有语义化的特性，可以让辅助工具快速定位到它。 它位于页面底部，用于呈现版权信息或者相关文档链接</p>
+<h3 id="audio标签"><a href="#audio标签" class="headerlink" title="audio标签"></a>audio标签</h3><blockquote>
+<p>HTML5 的 <code>audio</code> 标签用于呈现音频内容或音频流，它也具有语义化特性</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">&quot;meowClip&quot;</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;audio/meow.mp3&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/mpeg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;audio/meow.ogg&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/ogg&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>audio</code> 标签支持 <code>controls</code> 属性， 用于显示浏览器默认播放、停止和其他控制，以及支持键盘功能。 这是一个布尔值属性，意味着它不需要一个值，它在标签上存在即开启设置</p>
+<h3 id="figure标签"><a href="#figure标签" class="headerlink" title="figure标签"></a>figure标签</h3><blockquote>
+<p>HTML5 引入了 <code>figure</code> 标签以及与之相关的 <code>figcaption</code> 标签。 它们一起用于展示可视化信息（如：图片、图表）及其标题，通过语义化对内容进行分组并配以用于解释 <code>figure</code> 的文字，可以极大地提升内容的可访问性</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;roundhouseDestruction.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Photo of Camper Cat executing a roundhouse kick&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span></span><br><span class="line">    Master Camper Cat demonstrates proper form of a roundhouse kick.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意 <code>figcaption</code> 包含在 <code>figure</code> 标签中，并且可以与其他标签组合使用</p>
+<h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3><blockquote>
+<p><code>label</code> 标签的文本内容通常会是表单组件的名称或标签。 这些文本表明了组件的意义，也提升了表单的可访问性。 <code>label</code> 标签的 <code>for</code> 属性将标签与表单组件绑定；同时，屏幕阅读器也会读取 <code>for</code> 属性的属性值</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>for</code> 的属性值必须与表单组件的 <code>id</code> 属性值相同</p>
+<h3 id="fieldset标签"><a href="#fieldset标签" class="headerlink" title="fieldset标签"></a>fieldset标签</h3><blockquote>
+<p><code>fieldset</code> 标签包裹整组<strong>单选按钮</strong>，实现这个功能。 它经常使用 <code>legend</code> 标签来提供分组的描述，以便屏幕阅读器用户会阅读 <code>fieldset</code> 元素中的每个选项</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span> Choose one of these three items: <span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;one&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;one&quot;</span>&gt;</span>Choice One<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;two&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;two&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;two&quot;</span>&gt;</span>Choice Two<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;three&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;three&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;three&quot;</span>&gt;</span>Choice Three<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当选项的含义很明确时，如“性别选择”，<code>fieldset</code> 与 <code>legend</code> 标签可以省略。 这时，使用包含 <code>for</code> 属性的 <code>label</code> 标签就足够了</p>
+<h3 id="日期选择器"><a href="#日期选择器" class="headerlink" title="日期选择器"></a>日期选择器</h3><blockquote>
+<p>表单中经常出现 <code>input</code> 标签，它可以用来创建多种表单控件。 它的 <code>type</code> 属性指定了所要创建的 <code>input</code> 标签类型。HTML5 规范添加了 <code>date</code> 类型来创建日期选择器</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input1&quot;</span>&gt;</span>Enter a date:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input1&quot;</span> <span class="attr">name</span>=<span class="string">&quot;input1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="标准化时间"><a href="#标准化时间" class="headerlink" title="标准化时间"></a>标准化时间</h3><blockquote>
+<p>HTML5 还引入了 <code>time</code> 标签与 <code>datetime</code> 属性来标准化时间。 <code>time</code> 元素是一个行内元素，用于在一个页面上显示日期或时间</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">&quot;2022-01-22&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -214,211 +422,72 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS基础整理</title>
-    <url>/2022/01/10/CSS%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h2 id="更改文本颜色"><a href="#更改文本颜色" class="headerlink" title="更改文本颜色"></a>更改文本颜色</h2><blockquote>
-<p>修改<code>h2</code>元素的<code>style</code>属性来改变文本颜色，需要修改<code>color</code>属性值。需要在内联 <code>style</code> 声明末尾加上 <code>;</code></p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot; color: red;&quot;</span>&gt;</span> 更改颜色 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h2><blockquote>
-<p>在代码的顶部，创建一个 <code>style</code> 声明区域</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"> </span></span><br><span class="line"><span class="language-css">   <span class="selector-tag">h2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span> :blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>可以为所有的<code>h2</code>元素创建一个<em>css selector</em></p>
-<h2 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h2><blockquote>
-<p>CSS 的 class 具有可重用性，可应用于各种 HTML 元素，class选择器可设置单个元素的样式，以<code>.</code>为句首</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">   <span class="selector-class">.red-text</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;red-txet&quot;</span>&gt;</span> 文本 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="内外边距、边框"><a href="#内外边距、边框" class="headerlink" title="内外边距、边框"></a>内外边距、边框</h2><h3 id="添加边框"><a href="#添加边框" class="headerlink" title="添加边框"></a>添加边框</h3><blockquote>
-<p>CSS 边框具有 <code>style</code>、<code>color</code>、<code>width</code> 属性</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">   .border &#123;</span></span><br><span class="line"><span class="language-xml">     border-color: red;</span></span><br><span class="line"><span class="language-xml">     border-width: 5px;</span></span><br><span class="line"><span class="language-xml">     border-style: solid;  <span class="comment">&lt;!--实线--&gt;</span></span></span><br><span class="line"><span class="language-xml">     border-radius: 10px;  <span class="comment">&lt;!--边框圆角程度，也可以设置成50%--&gt;</span></span></span><br><span class="line"><span class="language-xml">   &#125;</span></span><br><span class="line"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+    <title>lowBit与质数优化</title>
+    <url>/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="lowBit"><a href="#lowBit" class="headerlink" title="lowBit"></a>lowBit</h1><p><strong>lowBit</strong>一般用在树状数组里，主要功能是: 找到x的二进制数的最后一个1所表示的二进制</p>
+<p>比如x&#x3D;6&#x3D;00000110 (2)，-x&#x3D;x(补)&#x3D;11111010(2)，lowBit(x)&#x3D;10(2)&#x3D;2</p>
+<p>也就是说,就是lowbit(x)的值必然是<strong>2的幂次</strong>(最高位为1,其他位为0)</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lowbit(x)</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>8</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<ul>
+<li>注意: x不能等于0, 否则会进入死循环, 所以树状数组通常使用的下标会执行+1操作</li>
+</ul>
 <blockquote>
-<p>记得在一个元素上可以同时应用多个 <code>class</code>，使用空格来分隔不同 class 即可</p>
+<p>lowbit只有一行操作，而且是位运算，效率很高</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot; class1 class2&quot;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">lowBit</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><blockquote>
-<p>内边距<code>padding</code>，<code>padding</code> 用来控制着元素内容与 <code>border</code> 之间的空隙大小，还可以设置四个不同方向的 <code>padding</code> 值</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">padding-top: 10px;</span><br><span class="line">padding-left: 10px;</span><br><span class="line">padding-right: 20px;</span><br><span class="line">padding-bottom: 20px;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D.6telm81o1v40.webp" alt="内外边距"></p>
-<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><blockquote>
-<p>外边距 <code>margin</code> 用来控制元素的边框与其他元素之间的 <code>border</code> 距离，增加蓝色的 <code>margin</code> 值，它也会增加元素边框到其他周围元素的距离</p>
-</blockquote>
-<p>在内外边距的设置里，可以按照<strong>顺时针</strong>顺序进行排序：上、右、下、左</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">padding: 10px 20px 10px 20px;</span><br></pre></td></tr></table></figure>
-
-<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><blockquote>
-<p>使用 <code>[attr=value]</code> 属性选择器</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-attr">[type=<span class="string">&#x27;radio&#x27;</span>]</span> &#123;</span><br><span class="line">   <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="继承样式"><a href="#继承样式" class="headerlink" title="继承样式"></a>继承样式</h2><blockquote>
-<p>设置 <code>body</code> 元素样式的方法跟设置其他 HTML 元素样式的方式一样，并且其他元素也会继承 <code>body</code> 中所设置的样式</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">background</span>: black;</span></span><br><span class="line"><span class="language-css">     <span class="attribute">font-family</span>: monospace;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">   Hello World</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<p>具体的应用后面在树状数组里讲</p>
+<h1 id="质数优化"><a href="#质数优化" class="headerlink" title="质数优化"></a>质数优化</h1><p>之前在LeetCode里看到这么一个题</p>
+<blockquote>
+<p>给两个整数 <code>left</code> 和 <code>right</code> ，在闭区间 <code>[left, right]</code> 范围内，统计并返回 <strong>计算置位位数为质数</strong> 的整数个数。</p>
 <ul>
-<li><p><strong>Class 选择器的优先级高于继承样式</strong></p>
-</li>
-<li><p><strong>ID 选择器优先级高于 Class 选择器</strong></p>
-</li>
-<li><p><strong>内联样式的优先级高于 ID 选择器</strong></p>
-</li>
-<li><p><strong>Important 的优先级最高</strong>(<code>!important</code>)</p>
-</li>
+<li><code>1 &lt;= left &lt;= right &lt;= 10^6^</code></li>
+<li><code>0 &lt;= right - left &lt;= 10^4^</code></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">id</span>=<span class="string">&quot;orange-text&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">&quot;pink-text blue-text&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;color: white&quot;</span>  &lt;!<span class="attr">--行内样式--</span>&gt;</span></span><br><span class="line">&gt;</span><br><span class="line">    Hello World!</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="自定义CSS变量"><a href="#自定义CSS变量" class="headerlink" title="自定义CSS变量"></a>自定义CSS变量</h2><blockquote>
-<p>为创建一个 CSS 变量，只需要在变量名前添加两个连字符号，并为其赋值即可</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attr">--penguin-skin</span>: gray;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用自定义CSS变量"><a href="#使用自定义CSS变量" class="headerlink" title="使用自定义CSS变量"></a>使用自定义CSS变量</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">var</span>(--penguin-skin);</span><br></pre></td></tr></table></figure>
-
-<p>除非变量名称完全匹配，否则将不会应用样式</p>
-<h3 id="CSS变量设置备用值"><a href="#CSS变量设置备用值" class="headerlink" title="CSS变量设置备用值"></a>CSS变量设置备用值</h3><blockquote>
-<p>使用变量来作为 CSS 属性值的时候，可以设置一个备用值来防止由于某些原因导致变量不生效的情况</p>
+<p>ep：6的二进制为110，有2个计算置位</p>
+<h2 id="质数优化思路"><a href="#质数优化思路" class="headerlink" title="质数优化思路"></a>质数优化思路</h2><p>可以注意到right&lt;&#x3D;10^6^&lt;2^20^，能知道的是二进制中1的个数不会超过19，不超过19的质数有 2,3,5,7,11,13,17,19；</p>
+<p>可以用mask&#x3D;10100010100010101100(2)&#x3D;665772来存储这些质数，从低到高第i位为1表示i为质数</p>
+<p>设整数 x 的二进制中 1 的个数为 c，若 mask按位与 2^c^ 不为 0，则说明 c是一个质数</p>
+<blockquote>
+<p>可以用 1 &lt;&lt; c来表示2^c^</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">var</span>(--penguin-skin, balck)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countPrimeSetBits</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> left;x &lt;= right;++x)&#123;</span><br><span class="line">            <span class="keyword">if</span>(((<span class="number">1</span> &lt;&lt; Integer.bitCount(x)) &amp; <span class="number">665772</span>) !=<span class="number">0</span>)&#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>备用值不是用于增强浏览器的兼容性，它也不适用于 IE 浏览器。 相反，它是用来让浏览器在找不到你的变量时可以显示一种颜色</p>
-<h3 id="继承CSS变量"><a href="#继承CSS变量" class="headerlink" title="继承CSS变量"></a>继承CSS变量</h3><blockquote>
-<p>CSS 变量经常会定义在 :root 元素内，这样就可被所有选择器继承</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">   <span class="attr">--penguin-belly</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>:root</code> 是一个伪类选择器，它是一个能够匹配文档根元素的选择器，通常指的是 <code>html</code> 元素。 在 <code>:root</code> 里创建变量在全局都可用，即在任何选择器里都生效</p>
-<p>如果在元素里创建相同的变量，会<strong>重写</strong>作用于整个页面的变量的值</p>
-<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><blockquote>
-<p>当屏幕小于或大于媒体查询所设置的值，只要更新变量的值，那么使用了此变量的元素样式就都会更改</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">350px</span>)&#123;</span><br><span class="line">  <span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">     ****</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="图片自适应设备尺寸"><a href="#图片自适应设备尺寸" class="headerlink" title="图片自适应设备尺寸"></a>图片自适应设备尺寸</h2><blockquote>
-<p>设置 <code>max-width</code> 值为 <code>100%</code> 可确保图片不超出父容器的范围；设置 <code>height</code> 属性为 <code>auto</code> 可以保持图片的原始宽高比</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">  <span class="attribute">max-width</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="排版随尺寸响应"><a href="#排版随尺寸响应" class="headerlink" title="排版随尺寸响应"></a>排版随尺寸响应</h2><blockquote>
-<p>可以用视窗单位来做响应式排版，视窗单位和百分比都是相对单位，但它们是基于不同的参照物</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">width</span>: <span class="number">30vw</span>; &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>vw</code>：如 <code>10vw</code> 的意思是视窗宽度的 10%。</li>
-<li><code>vh：</code> 如 <code>3vh</code> 的意思是视窗高度的 3%。</li>
-<li><code>vmin：</code> 如 <code>70vmin</code> 的意思是视窗的高度和宽度中较小一个的 70%。</li>
-<li><code>vmax：</code> 如 <code>100vmax</code> 的意思是视窗的高度和宽度中较大一个的 100%。</li>
-</ul>
+<p><code>Integer.bitCount( int i)</code> 这个方法是jdk自带的帮我们快速统计i转成二进制补码后，其中二进制数中包含1的数量</p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>前端</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML标签整理</title>
-    <url>/2022/01/08/HTML%E6%A0%87%E7%AD%BE%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<p>整理一些HTML的标签</p>
-<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">  副标题</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>h1、h2这一类表示的正标题副标题的标签</p>
-<h2 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  段落标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>所有的<code>img</code>元素必须有<code>alt</code>属性，<code>alt </code>的属性值有两个作用，<strong>第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本</strong></p>
-<h2 id="网页跳转"><a href="#网页跳转" class="headerlink" title="网页跳转"></a>网页跳转</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span> 网页跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>网页的跳转分为外部链接和内部链接，当是外部链接时，可以是对应的URL，当是内部链接时，<code>href=&quot;#xxx&quot;</code>，要在xxx前加上一个<code>#</code>，而xxx对应的是元素的<code>id</code></p>
-<h2 id="无序列表和有序列表"><a href="#无序列表和有序列表" class="headerlink" title="无序列表和有序列表"></a>无序列表和有序列表</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> 无序列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  <span class="comment">&lt;!--无序列表--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> 有序列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="comment">&lt;!-- 有序列表--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;&quot;</span> <span class="attr">required</span>&gt;</span> <span class="comment">&lt;!-- 占位符文本placeholder-&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>input</code>输入框是没有结束标签的</p>
-<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>可以只通过 HTML 来实现发送数据给服务器的表单， 只需要给 <code>form</code> 元素添加 <code>action</code> 属性即可</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">required</span>&gt;</span>  <span class="comment">&lt;!--必选字段--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">    提交按钮</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="单选和复选"><a href="#单选和复选" class="headerlink" title="单选和复选"></a>单选和复选</h3><blockquote>
-<p>每一个单选和复选都要嵌套在<code>label</code>标签里，设置上<code>for</code>属性，让其值与关联的<code>input</code>的<code>id</code>属性值相同；所有关联的单选和复选都应该有相同的<code>name</code>属性</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;danxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>单选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fuxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>复选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>提交表单时，所选项的值会发送给服务端。 <code>radio</code> 和 <code>checkbox</code> 的 <code>value</code> 属性值决定了发送到服务端的实际内容</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;danxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">value</span>=<span class="string">&quot;danxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>单选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fuxuan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">value</span>=<span class="string">&quot;fuxuan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span>复选<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在<code>input</code>中添加<code>checked</code>属性表示单选和复选框有默认选择</p>
-<h2 id="内容划分元素"><a href="#内容划分元素" class="headerlink" title="内容划分元素"></a>内容划分元素</h2><blockquote>
-<p><code>div</code> 元素也叫内容划分元素，是一个包裹其他元素的通用容器。</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="HTML5标签"><a href="#HTML5标签" class="headerlink" title="HTML5标签"></a>HTML5标签</h2><h3 id="article标签"><a href="#article标签" class="headerlink" title="article标签"></a>article标签</h3><blockquote>
-<p><code>article</code> 是一个分段标签，用于呈现独立及完整的内容。 这个标签适用于博客、论坛帖子或者新闻文章</p>
-</blockquote>
-<p><code>section</code> 元素也是 HTML5 引入的新元素，其语义与 <code>article</code> 略有不同。 <code>article</code> 用于独立且完整的内容，而 <code>section</code> 用于对与主题相关的内容进行分组。 它们可以根据需要来嵌套使用</p>
-<h3 id="header标签"><a href="#header标签" class="headerlink" title="header标签"></a>header标签</h3><blockquote>
-<p><code>header</code> 也是一个具有语义化的、可以提升页面可访问性的 HTML5 标签。 它可以为父级标签呈现简介信息或者导航链接，适用于那些在多个页面顶部重复出现的内容</p>
-</blockquote>
-<p>与 <code>main</code> 类似，<code>header</code> 的语义化特性也可以让辅助工具快速定位到它的内容</p>
-<h3 id="nav标签和footer标签"><a href="#nav标签和footer标签" class="headerlink" title="nav标签和footer标签"></a>nav标签和footer标签</h3><blockquote>
-<p><code>nav</code> 也是一个具有语义化特性的 HTML5 标签，它可以使屏幕阅读器快速识别出页面中的导航信息。 它用于呈现页面中的主导航链接</p>
-</blockquote>
-<p><code>footer</code> 元素也具有语义化的特性，可以让辅助工具快速定位到它。 它位于页面底部，用于呈现版权信息或者相关文档链接</p>
-<h3 id="audio标签"><a href="#audio标签" class="headerlink" title="audio标签"></a>audio标签</h3><blockquote>
-<p>HTML5 的 <code>audio</code> 标签用于呈现音频内容或音频流，它也具有语义化特性</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">&quot;meowClip&quot;</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;audio/meow.mp3&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/mpeg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;audio/meow.ogg&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/ogg&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>audio</code> 标签支持 <code>controls</code> 属性， 用于显示浏览器默认播放、停止和其他控制，以及支持键盘功能。 这是一个布尔值属性，意味着它不需要一个值，它在标签上存在即开启设置</p>
-<h3 id="figure标签"><a href="#figure标签" class="headerlink" title="figure标签"></a>figure标签</h3><blockquote>
-<p>HTML5 引入了 <code>figure</code> 标签以及与之相关的 <code>figcaption</code> 标签。 它们一起用于展示可视化信息（如：图片、图表）及其标题，通过语义化对内容进行分组并配以用于解释 <code>figure</code> 的文字，可以极大地提升内容的可访问性</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;roundhouseDestruction.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Photo of Camper Cat executing a roundhouse kick&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span></span><br><span class="line">    Master Camper Cat demonstrates proper form of a roundhouse kick.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>注意 <code>figcaption</code> 包含在 <code>figure</code> 标签中，并且可以与其他标签组合使用</p>
-<h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3><blockquote>
-<p><code>label</code> 标签的文本内容通常会是表单组件的名称或标签。 这些文本表明了组件的意义，也提升了表单的可访问性。 <code>label</code> 标签的 <code>for</code> 属性将标签与表单组件绑定；同时，屏幕阅读器也会读取 <code>for</code> 属性的属性值</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>for</code> 的属性值必须与表单组件的 <code>id</code> 属性值相同</p>
-<h3 id="fieldset标签"><a href="#fieldset标签" class="headerlink" title="fieldset标签"></a>fieldset标签</h3><blockquote>
-<p><code>fieldset</code> 标签包裹整组<strong>单选按钮</strong>，实现这个功能。 它经常使用 <code>legend</code> 标签来提供分组的描述，以便屏幕阅读器用户会阅读 <code>fieldset</code> 元素中的每个选项</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span> Choose one of these three items: <span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;one&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;one&quot;</span>&gt;</span>Choice One<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;two&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;two&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;two&quot;</span>&gt;</span>Choice Two<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;three&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;items&quot;</span> <span class="attr">value</span>=<span class="string">&quot;three&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;three&quot;</span>&gt;</span>Choice Three<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>当选项的含义很明确时，如“性别选择”，<code>fieldset</code> 与 <code>legend</code> 标签可以省略。 这时，使用包含 <code>for</code> 属性的 <code>label</code> 标签就足够了</p>
-<h3 id="日期选择器"><a href="#日期选择器" class="headerlink" title="日期选择器"></a>日期选择器</h3><blockquote>
-<p>表单中经常出现 <code>input</code> 标签，它可以用来创建多种表单控件。 它的 <code>type</code> 属性指定了所要创建的 <code>input</code> 标签类型。HTML5 规范添加了 <code>date</code> 类型来创建日期选择器</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input1&quot;</span>&gt;</span>Enter a date:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input1&quot;</span> <span class="attr">name</span>=<span class="string">&quot;input1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="标准化时间"><a href="#标准化时间" class="headerlink" title="标准化时间"></a>标准化时间</h3><blockquote>
-<p>HTML5 还引入了 <code>time</code> 标签与 <code>datetime</code> 属性来标准化时间。 <code>time</code> 元素是一个行内元素，用于在一个页面上显示日期或时间</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">&quot;2022-01-22&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>HTML</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -578,6 +647,56 @@
       </tags>
   </entry>
   <entry>
+    <title>算法练-删除链表中重复元素</title>
+    <url>/2021/05/09/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<p>算法练中将包含相关算法和一些与考研题目结合的C语言的算法题进行延伸思考，在用Java简单实现的同时，对内容深化并尝试C语言的叙述来更加巩固当前知识点。</p>
+<h1 id="题目1"><a href="#题目1" class="headerlink" title="题目1"></a>题目1</h1><p>存在一个按升序排列的链表，给你这个链表的头节点 <code>head</code> ，请你删除所有重复的元素，使每个元素 <strong>只出现一次</strong> 。返回同样按升序排列的结果链表。</p>
+<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-1.1oj7ystv4nq8.png" alt="示例图"></p>
+<h1 id="方法：一次遍历"><a href="#方法：一次遍历" class="headerlink" title="方法：一次遍历"></a>方法：一次遍历</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这个题的思路比较简单，因为是按升序排列的，所以重复的元素基本都是相邻着的，因此只需要比较相邻两个节点的值，就能判断出是否是重复的。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//删除链表中的重复元素</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Node</span> <span class="variable">head</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        head.setNext(node1);</span><br><span class="line">        node1.setNext(node2);</span><br><span class="line">        node2.setNext(node3);</span><br><span class="line">        node3.setNext(node4);</span><br><span class="line">        node4.setNext(node5);</span><br><span class="line"></span><br><span class="line">        <span class="type">Node</span> <span class="variable">h</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (h != <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.print(h.getData() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            h = h.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Solution</span> <span class="variable">solution</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Solution</span>();</span><br><span class="line">        head = solution.deleteDuplicates(head);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;\n**********************&quot;</span>);</span><br><span class="line">        <span class="comment">// 打印删除重复元素后的链表</span></span><br><span class="line">        <span class="keyword">while</span> (head != <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(head.getData() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            head = head.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="comment">//算法主体</span></span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">deleteDuplicates</span><span class="params">(Node head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head ==<span class="literal">null</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (cur.getNext() != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//比较相邻两节点的值，若相等，就让cur的next指向下下个节点</span></span><br><span class="line">            <span class="keyword">if</span>(cur.getData() == cur.getNext().getData())&#123;</span><br><span class="line">                cur.setNext(cur.getNext().getNext());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                cur = cur.getNext();    <span class="comment">//若相邻不相等，就让cur往后移一位</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造节点类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> Data;   <span class="comment">//数据域</span></span><br><span class="line">    <span class="keyword">private</span> Node next;  <span class="comment">//指针域</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(<span class="type">int</span> Data)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.Data = Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getData</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(<span class="type">int</span> Data)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.Data = Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">getNext</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setNext</span><span class="params">(Node next)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>011335</p>
+<hr>
+<p>0135</p>
+</blockquote>
+<h2 id="算法主体"><a href="#算法主体" class="headerlink" title="算法主体"></a>算法主体</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">deleteDuplicates</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head ==<span class="literal">null</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">            <span class="keyword">while</span>(cur.next !=<span class="literal">null</span> )&#123;</span><br><span class="line">                <span class="keyword">if</span>(cur.val == cur.next.val )&#123;</span><br><span class="line">                    cur.next = cur.next.next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    cur = cur.next;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">struct</span> ListNode* <span class="title function_">deleteDuplicates</span><span class="params">(<span class="keyword">struct</span> ListNode* head)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!head) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">cur</span> =</span> head;</span><br><span class="line">    <span class="keyword">while</span> (cur-&gt;next) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cur-&gt;val == cur-&gt;next-&gt;val) &#123;</span><br><span class="line">            cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(N)，N是链表长度</p>
+<p>空间复杂度：O(1)</p>
+<h1 id="扩展延伸"><a href="#扩展延伸" class="headerlink" title="扩展延伸"></a>扩展延伸</h1><h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-2.24ao3hcb35kw.jpg" alt="题图"></p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>算法的基本设计思想</p>
+</blockquote>
+<ul>
+<li><p>算法的核心思想是用空间来换时间。使用辅助数组来记录链表中已经出现的数值，这样只用对链表进行一次遍历</p>
+</li>
+<li><p>因为|data|&lt;&#x3D;0，所以辅助数组q的大小为n+1，让各个元素的初始值置为0，如果在遍历链表过程中首次出现|data|，就令这个q[|data|]为1，这样后面如果出现了第二次|data|，就可以把它从链表中删除。</p>
+<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-3.1pzwdsxsibsw.png" alt="思路图"></p>
+</li>
+</ul>
+<blockquote>
+<p>用C语言描述单链表节点的数据类型定义</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> data;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">link</span>;</span></span><br><span class="line">&#125;NODE;</span><br><span class="line">Typedef NODE *PNODE;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">func</span> <span class="params">(PNODE h, <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">  PNODE p=h, r;</span><br><span class="line">  <span class="type">int</span> *q, m;</span><br><span class="line">  q= (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*(n+<span class="number">1</span>));   <span class="comment">//申请n+1个位置的辅助空间</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">    *(q+i) = <span class="number">0</span>;													<span class="comment">//将数组元素的初始值置为0</span></span><br><span class="line">  <span class="keyword">while</span>(p-&gt;link != null)</span><br><span class="line">  &#123;</span><br><span class="line">    m=p-&gt;link-&gt;data&gt;<span class="number">0</span>? p-&gt;link-&gt;data : -p-&gt;link-&gt;data;  <span class="comment">//判断正负，将条件全部变成绝对值</span></span><br><span class="line">    <span class="keyword">if</span>(*(q+m) == <span class="number">0</span>)				<span class="comment">//判断此时该结点data是否出现过</span></span><br><span class="line">    &#123;</span><br><span class="line">      *(q+m) = <span class="number">1</span>;   			<span class="comment">//首次出现，赋值1进行标记</span></span><br><span class="line">      p= p-&gt;link;   			<span class="comment">//保留</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>   								<span class="comment">//重复出现</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//删除该结点</span></span><br><span class="line">      r= p-&gt;link;</span><br><span class="line">      p-&gt;link = r-&gt;link;</span><br><span class="line">      <span class="built_in">free</span>(r);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">free</span>(q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(m)</p>
+<p>空间复杂度：O(n)</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始搭建博客(hexo+github)</title>
     <url>/2021/04/24/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&ensp;&ensp;&ensp;&ensp;<strong>本篇文章主要会讲如何借用hexo框架来简单搭建一个属于自己的博客(基于Windows系统)，从前期准备到部署到github上一个时间并不长的流程。同时通过这种整理成册的方式来加深自己的印象(<del>不希望还有重新搭建的回忆</del>)，因为时间的问题，首次整理流程可能会有遗漏或者错误的地方，我会收集反馈和时不时检查来处理这些问题，下面就开始博客搭建之旅吧。</strong></p>
@@ -677,122 +796,56 @@
       </tags>
   </entry>
   <entry>
-    <title>lowBit与质数优化</title>
-    <url>/2022/04/04/lowbit%E4%B8%8E%E8%B4%A8%E6%95%B0%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<h1 id="lowBit"><a href="#lowBit" class="headerlink" title="lowBit"></a>lowBit</h1><p><strong>lowBit</strong>一般用在树状数组里，主要功能是: 找到x的二进制数的最后一个1所表示的二进制</p>
-<p>比如x&#x3D;6&#x3D;00000110 (2)，-x&#x3D;x(补)&#x3D;11111010(2)，lowBit(x)&#x3D;10(2)&#x3D;2</p>
-<p>也就是说,就是lowbit(x)的值必然是<strong>2的幂次</strong>(最高位为1,其他位为0)</p>
-<table>
-<thead>
-<tr>
-<th>x</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>lowbit(x)</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td>4</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td>8</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<ul>
-<li>注意: x不能等于0, 否则会进入死循环, 所以树状数组通常使用的下标会执行+1操作</li>
-</ul>
-<blockquote>
-<p>lowbit只有一行操作，而且是位运算，效率很高</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">lowBit</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>具体的应用后面在树状数组里讲</p>
-<h1 id="质数优化"><a href="#质数优化" class="headerlink" title="质数优化"></a>质数优化</h1><p>之前在LeetCode里看到这么一个题</p>
-<blockquote>
-<p>给两个整数 <code>left</code> 和 <code>right</code> ，在闭区间 <code>[left, right]</code> 范围内，统计并返回 <strong>计算置位位数为质数</strong> 的整数个数。</p>
-<ul>
-<li><code>1 &lt;= left &lt;= right &lt;= 10^6^</code></li>
-<li><code>0 &lt;= right - left &lt;= 10^4^</code></li>
-</ul>
-</blockquote>
-<p>ep：6的二进制为110，有2个计算置位</p>
-<h2 id="质数优化思路"><a href="#质数优化思路" class="headerlink" title="质数优化思路"></a>质数优化思路</h2><p>可以注意到right&lt;&#x3D;10^6^&lt;2^20^，能知道的是二进制中1的个数不会超过19，不超过19的质数有 2,3,5,7,11,13,17,19；</p>
-<p>可以用mask&#x3D;10100010100010101100(2)&#x3D;665772来存储这些质数，从低到高第i位为1表示i为质数</p>
-<p>设整数 x 的二进制中 1 的个数为 c，若 mask按位与 2^c^ 不为 0，则说明 c是一个质数</p>
-<blockquote>
-<p>可以用 1 &lt;&lt; c来表示2^c^</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countPrimeSetBits</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> left;x &lt;= right;++x)&#123;</span><br><span class="line">            <span class="keyword">if</span>(((<span class="number">1</span> &lt;&lt; Integer.bitCount(x)) &amp; <span class="number">665772</span>) !=<span class="number">0</span>)&#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>Integer.bitCount( int i)</code> 这个方法是jdk自带的帮我们快速统计i转成二进制补码后，其中二进制数中包含1的数量</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法练-删除链表中重复元素</title>
-    <url>/2021/05/09/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<p>算法练中将包含相关算法和一些与考研题目结合的C语言的算法题进行延伸思考，在用Java简单实现的同时，对内容深化并尝试C语言的叙述来更加巩固当前知识点。</p>
-<h1 id="题目1"><a href="#题目1" class="headerlink" title="题目1"></a>题目1</h1><p>存在一个按升序排列的链表，给你这个链表的头节点 <code>head</code> ，请你删除所有重复的元素，使每个元素 <strong>只出现一次</strong> 。返回同样按升序排列的结果链表。</p>
-<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-1.1oj7ystv4nq8.png" alt="示例图"></p>
-<h1 id="方法：一次遍历"><a href="#方法：一次遍历" class="headerlink" title="方法：一次遍历"></a>方法：一次遍历</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这个题的思路比较简单，因为是按升序排列的，所以重复的元素基本都是相邻着的，因此只需要比较相邻两个节点的值，就能判断出是否是重复的。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//删除链表中的重复元素</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Node</span> <span class="variable">head</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">node5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        head.setNext(node1);</span><br><span class="line">        node1.setNext(node2);</span><br><span class="line">        node2.setNext(node3);</span><br><span class="line">        node3.setNext(node4);</span><br><span class="line">        node4.setNext(node5);</span><br><span class="line"></span><br><span class="line">        <span class="type">Node</span> <span class="variable">h</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (h != <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.print(h.getData() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            h = h.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Solution</span> <span class="variable">solution</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Solution</span>();</span><br><span class="line">        head = solution.deleteDuplicates(head);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;\n**********************&quot;</span>);</span><br><span class="line">        <span class="comment">// 打印删除重复元素后的链表</span></span><br><span class="line">        <span class="keyword">while</span> (head != <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(head.getData() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            head = head.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="comment">//算法主体</span></span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">deleteDuplicates</span><span class="params">(Node head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head ==<span class="literal">null</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (cur.getNext() != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//比较相邻两节点的值，若相等，就让cur的next指向下下个节点</span></span><br><span class="line">            <span class="keyword">if</span>(cur.getData() == cur.getNext().getData())&#123;</span><br><span class="line">                cur.setNext(cur.getNext().getNext());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                cur = cur.getNext();    <span class="comment">//若相邻不相等，就让cur往后移一位</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造节点类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> Data;   <span class="comment">//数据域</span></span><br><span class="line">    <span class="keyword">private</span> Node next;  <span class="comment">//指针域</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(<span class="type">int</span> Data)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.Data = Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getData</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(<span class="type">int</span> Data)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.Data = Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">getNext</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setNext</span><span class="params">(Node next)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<blockquote>
-<p>011335</p>
-<hr>
-<p>0135</p>
-</blockquote>
-<h2 id="算法主体"><a href="#算法主体" class="headerlink" title="算法主体"></a>算法主体</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">deleteDuplicates</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head ==<span class="literal">null</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">            <span class="keyword">while</span>(cur.next !=<span class="literal">null</span> )&#123;</span><br><span class="line">                <span class="keyword">if</span>(cur.val == cur.next.val )&#123;</span><br><span class="line">                    cur.next = cur.next.next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    cur = cur.next;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">struct</span> ListNode* <span class="title function_">deleteDuplicates</span><span class="params">(<span class="keyword">struct</span> ListNode* head)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!head) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">cur</span> =</span> head;</span><br><span class="line">    <span class="keyword">while</span> (cur-&gt;next) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cur-&gt;val == cur-&gt;next-&gt;val) &#123;</span><br><span class="line">            cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(N)，N是链表长度</p>
-<p>空间复杂度：O(1)</p>
-<h1 id="扩展延伸"><a href="#扩展延伸" class="headerlink" title="扩展延伸"></a>扩展延伸</h1><h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-2.24ao3hcb35kw.jpg" alt="题图"></p>
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
-<p>算法的基本设计思想</p>
-</blockquote>
-<ul>
-<li><p>算法的核心思想是用空间来换时间。使用辅助数组来记录链表中已经出现的数值，这样只用对链表进行一次遍历</p>
+    <title>常见的图像滤波方法</title>
+    <url>/2023/04/08/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="图像滤波方式"><a href="#图像滤波方式" class="headerlink" title="图像滤波方式"></a>图像滤波方式</h1><h2 id="线性滤波"><a href="#线性滤波" class="headerlink" title="线性滤波"></a>线性滤波</h2><ul>
+<li><p>线性滤波是一种图像处理方法，它是通过对图像像素周围的邻域进行加权平均来实现的</p>
 </li>
-<li><p>因为|data|&lt;&#x3D;0，所以辅助数组q的大小为n+1，让各个元素的初始值置为0，如果在遍历链表过程中首次出现|data|，就令这个q[|data|]为1，这样后面如果出现了第二次|data|，就可以把它从链表中删除。</p>
-<p><img src="https://cdn.staticaly.com/gh/FLASHyan/image@master/img-path/5.8-3.1pzwdsxsibsw.png" alt="思路图"></p>
+<li><p>它被称为线性滤波，因为它的处理过程可以用线性算子的形式表示，这使得它可以通过卷积运算来实现</p>
+</li>
+<li><p>线性滤波中使用的权重通常称为卷积核或滤波器。卷积核是一个二维的矩阵，用于对图像进行卷积操作。在卷积运算中，卷积核被放置在图像的每个像素上，并将其与该像素周围的邻域进行卷积操作。卷积核中的每个元素表示一个权重，它决定了该像素对于卷积运算的贡献。卷积核中的权重可以根据需要进行调整，以实现不同的滤波效果。例如，可以使用一个平均值卷积核来进行<strong>均值滤波</strong>，使用一个高斯卷积核来进行<strong>高斯滤波</strong>等等</p>
 </li>
 </ul>
+<p>以下是一些应用场景：</p>
 <blockquote>
-<p>用C语言描述单链表节点的数据类型定义</p>
+<ol>
+<li>图像去噪声：图像在传输或采集过程中会受到各种噪声的干扰，通过线性滤波可以去除图像中的噪声</li>
+<li>图像平滑：有些图像具有噪声和纹理，这些会影响图像分析和处理的效果。线性滤波可以平滑图像并消除其中的纹理，从而使图像更容易分析和处理</li>
+<li>图像增强：通过选择合适的滤波算法，可以对图像进行增强处理，使得图像更加清晰、细节更加明显</li>
+<li>图像边缘检测：通过选择不同的滤波算法，可以对图像进行边缘检测，即提取出图像中的边缘信息</li>
+<li>彩色图像处理：彩色图像通常是由多个通道组成的，线性滤波可以对各个通道分别进行处理，达到不同的效果，例如增强颜色饱和度、去除彩色图像中的噪声等</li>
+</ol>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> data;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">link</span>;</span></span><br><span class="line">&#125;NODE;</span><br><span class="line">Typedef NODE *PNODE;</span><br></pre></td></tr></table></figure>
-
-<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">func</span> <span class="params">(PNODE h, <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">  PNODE p=h, r;</span><br><span class="line">  <span class="type">int</span> *q, m;</span><br><span class="line">  q= (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*(n+<span class="number">1</span>));   <span class="comment">//申请n+1个位置的辅助空间</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">    *(q+i) = <span class="number">0</span>;													<span class="comment">//将数组元素的初始值置为0</span></span><br><span class="line">  <span class="keyword">while</span>(p-&gt;link != null)</span><br><span class="line">  &#123;</span><br><span class="line">    m=p-&gt;link-&gt;data&gt;<span class="number">0</span>? p-&gt;link-&gt;data : -p-&gt;link-&gt;data;  <span class="comment">//判断正负，将条件全部变成绝对值</span></span><br><span class="line">    <span class="keyword">if</span>(*(q+m) == <span class="number">0</span>)				<span class="comment">//判断此时该结点data是否出现过</span></span><br><span class="line">    &#123;</span><br><span class="line">      *(q+m) = <span class="number">1</span>;   			<span class="comment">//首次出现，赋值1进行标记</span></span><br><span class="line">      p= p-&gt;link;   			<span class="comment">//保留</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>   								<span class="comment">//重复出现</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//删除该结点</span></span><br><span class="line">      r= p-&gt;link;</span><br><span class="line">      p-&gt;link = r-&gt;link;</span><br><span class="line">      <span class="built_in">free</span>(r);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">free</span>(q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(m)</p>
-<p>空间复杂度：O(n)</p>
+<h2 id="非线性滤波"><a href="#非线性滤波" class="headerlink" title="非线性滤波"></a>非线性滤波</h2><ul>
+<li><p>非线性滤波和线性滤波不太一样的点在于，非线性滤波所使用的滤波器是非线性的，通常是使用一些统计学的方法来处理图像</p>
+</li>
+<li><p>非线性滤波的应用场景与其特点有关，它能够在保留图像细节信息的同时去除图像中的噪声，使图像更加清晰</p>
+</li>
+</ul>
+<p>非线性滤波的一些应用场景：</p>
+<blockquote>
+<ol>
+<li>图像去噪：非线性滤波能够有效地去除图像中的噪声，常见的去噪滤波器包括<strong>中值滤波器</strong>、<strong>双边滤波器</strong>、<strong>非局部均值滤波器（NLMeans）</strong>等</li>
+<li>边缘保护：线性滤波通常会平滑掉图像中的边缘信息，而非线性滤波能够在保留图像细节信息的同时保护边缘，常见的边缘保护滤波器包括<strong>导向滤波器</strong>、<strong>结构化边缘保护滤波器</strong>等</li>
+<li>图像增强：非线性滤波能够在去除图像噪声的同时增强图像细节信息，使图像更加清晰，常见的图像增强滤波器包括<strong>非局部均值滤波器</strong>、<strong>双边滤波器</strong>等</li>
+<li>彩色图像处理：非线性滤波常常用于彩色图像的处理，因为彩色图像中的不同颜色通道具有不同的统计特性，使用非线性滤波能够更好地保留彩色图像的细节信息</li>
+</ol>
+</blockquote>
+<p>非局部均值滤波（NLMeans）利用相似块的信息来减少噪声。在该算法中，通常用相邻像素的块代替单一像素的值进行平均化，以增强噪声消除</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>其实线性滤波和非线性滤波的优劣主要取决于它们的使用场景</p>
+<ul>
+<li><p>线性滤波优点是它的计算简单，运算速度快但由于线性滤波是基于像素领域进行的滤波，因此会模糊图像边缘和图像细节</p>
+</li>
+<li><p>非线性滤波计算会更加复杂，它能够基于像素的灰度值和空间位置进行滤波，在消除噪声的同时还能保护图像细节。不过在一些场景下会产生不良的滤波效果，例如对于噪声分布不均匀的图像中，用中值滤波就无法很好地消除噪声</p>
+</li>
+</ul>
+<p>下一篇来总结一下几种滤波的实现、原理和代码实现的步骤。</p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>图像处理</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>链表</tag>
+        <tag>图像处理</tag>
       </tags>
   </entry>
   <entry>
@@ -929,59 +982,6 @@
       </categories>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常见的图像滤波方法</title>
-    <url>/2023/04/08/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="图像滤波方式"><a href="#图像滤波方式" class="headerlink" title="图像滤波方式"></a>图像滤波方式</h1><h2 id="线性滤波"><a href="#线性滤波" class="headerlink" title="线性滤波"></a>线性滤波</h2><ul>
-<li><p>线性滤波是一种图像处理方法，它是通过对图像像素周围的邻域进行加权平均来实现的</p>
-</li>
-<li><p>它被称为线性滤波，因为它的处理过程可以用线性算子的形式表示，这使得它可以通过卷积运算来实现</p>
-</li>
-<li><p>线性滤波中使用的权重通常称为卷积核或滤波器。卷积核是一个二维的矩阵，用于对图像进行卷积操作。在卷积运算中，卷积核被放置在图像的每个像素上，并将其与该像素周围的邻域进行卷积操作。卷积核中的每个元素表示一个权重，它决定了该像素对于卷积运算的贡献。卷积核中的权重可以根据需要进行调整，以实现不同的滤波效果。例如，可以使用一个平均值卷积核来进行<strong>均值滤波</strong>，使用一个高斯卷积核来进行<strong>高斯滤波</strong>等等</p>
-</li>
-</ul>
-<p>以下是一些应用场景：</p>
-<blockquote>
-<ol>
-<li>图像去噪声：图像在传输或采集过程中会受到各种噪声的干扰，通过线性滤波可以去除图像中的噪声</li>
-<li>图像平滑：有些图像具有噪声和纹理，这些会影响图像分析和处理的效果。线性滤波可以平滑图像并消除其中的纹理，从而使图像更容易分析和处理</li>
-<li>图像增强：通过选择合适的滤波算法，可以对图像进行增强处理，使得图像更加清晰、细节更加明显</li>
-<li>图像边缘检测：通过选择不同的滤波算法，可以对图像进行边缘检测，即提取出图像中的边缘信息</li>
-<li>彩色图像处理：彩色图像通常是由多个通道组成的，线性滤波可以对各个通道分别进行处理，达到不同的效果，例如增强颜色饱和度、去除彩色图像中的噪声等</li>
-</ol>
-</blockquote>
-<h2 id="非线性滤波"><a href="#非线性滤波" class="headerlink" title="非线性滤波"></a>非线性滤波</h2><ul>
-<li><p>非线性滤波和线性滤波不太一样的点在于，非线性滤波所使用的滤波器是非线性的，通常是使用一些统计学的方法来处理图像</p>
-</li>
-<li><p>非线性滤波的应用场景与其特点有关，它能够在保留图像细节信息的同时去除图像中的噪声，使图像更加清晰</p>
-</li>
-</ul>
-<p>非线性滤波的一些应用场景：</p>
-<blockquote>
-<ol>
-<li>图像去噪：非线性滤波能够有效地去除图像中的噪声，常见的去噪滤波器包括<strong>中值滤波器</strong>、<strong>双边滤波器</strong>、<strong>非局部均值滤波器（NLMeans）</strong>等</li>
-<li>边缘保护：线性滤波通常会平滑掉图像中的边缘信息，而非线性滤波能够在保留图像细节信息的同时保护边缘，常见的边缘保护滤波器包括<strong>导向滤波器</strong>、<strong>结构化边缘保护滤波器</strong>等</li>
-<li>图像增强：非线性滤波能够在去除图像噪声的同时增强图像细节信息，使图像更加清晰，常见的图像增强滤波器包括<strong>非局部均值滤波器</strong>、<strong>双边滤波器</strong>等</li>
-<li>彩色图像处理：非线性滤波常常用于彩色图像的处理，因为彩色图像中的不同颜色通道具有不同的统计特性，使用非线性滤波能够更好地保留彩色图像的细节信息</li>
-</ol>
-</blockquote>
-<p>非局部均值滤波（NLMeans）利用相似块的信息来减少噪声。在该算法中，通常用相邻像素的块代替单一像素的值进行平均化，以增强噪声消除</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>其实线性滤波和非线性滤波的优劣主要取决于它们的使用场景</p>
-<ul>
-<li><p>线性滤波优点是它的计算简单，运算速度快但由于线性滤波是基于像素领域进行的滤波，因此会模糊图像边缘和图像细节</p>
-</li>
-<li><p>非线性滤波计算会更加复杂，它能够基于像素的灰度值和空间位置进行滤波，在消除噪声的同时还能保护图像细节。不过在一些场景下会产生不良的滤波效果，例如对于噪声分布不均匀的图像中，用中值滤波就无法很好地消除噪声</p>
-</li>
-</ul>
-<p>下一篇来总结一下几种滤波的实现、原理和代码实现的步骤。</p>
-]]></content>
-      <categories>
-        <category>图像处理</category>
-      </categories>
-      <tags>
-        <tag>图像处理</tag>
       </tags>
   </entry>
   <entry>
@@ -1123,6 +1123,72 @@
       </tags>
   </entry>
   <entry>
+    <title>算法练-最小栈的实现</title>
+    <url>/2021/05/26/%E7%AE%97%E6%B3%95%E7%BB%83-%E6%9C%80%E5%B0%8F%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;针对王道考研第三章（栈与队列）的拓展思考题–最小栈的实现。本文会探讨三种方法来实现，分别是辅助类、单个栈和双栈。</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>&ensp;&ensp;&ensp;&ensp;请设计一个栈，除了常规栈支持的pop与push函数以外，还支持min函数，该函数返回栈元素中的最小值。执行push、pop和min操作的时间复杂度必须为O(1)。</p>
+<blockquote>
+<p>注：这里要求的是常量级的时间里找到最小值，所以先排序、再查找是不行的，我们必须在需要的时候就要得到最小值</p>
+</blockquote>
+<h1 id="方法一：辅助类（链表类）"><a href="#方法一：辅助类（链表类）" class="headerlink" title="方法一：辅助类（链表类）"></a>方法一：辅助类（链表类）</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;我们知道，栈其实是一种操作受限的线性表，所以栈的一些操作可以通过链表来实现。这里要我们设计一个栈，而栈的实现我们可以使用链表，先定义一个链表类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> min;  <span class="comment">//最小值</span></span><br><span class="line">  <span class="keyword">public</span> ListNode next;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.val = val;</span><br><span class="line">    <span class="built_in">this</span>.min = min;</span><br><span class="line">    <span class="built_in">this</span>.next = next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/%E9%93%BE%E8%A1%A8%E7%B1%BB%E6%80%9D%E8%B7%AF%E5%9B%BE.4f3ddq5y3qi0.png" alt="链表类思路图"></p>
+<p>&ensp;&ensp;&ensp;&ensp;栈中的最小值始终保存在链表的头结点，我们要获取最小值时直接返回<code>head.min</code>，即可在常量时间内完成。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(<span class="number">3</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ListNode head;	<span class="comment">//定义一个头结点</span></span><br><span class="line">    <span class="comment">//压栈操作，压入val、min</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())&#123;</span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, x, <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, Math.min(x , head.min), head);	<span class="comment">// Math.min函数选出最小值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//相当于返回栈中最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> head.min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断栈是否为空</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head == <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> min;</span><br><span class="line">    <span class="keyword">public</span> ListNode next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.min = min;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>min：-1</p>
+</blockquote>
+<h2 id="算法主体"><a href="#算法主体" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ListNode head;	<span class="comment">//定义一个头结点</span></span><br><span class="line">    <span class="comment">//压栈操作，压入val、min</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())&#123;</span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, x, <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, Math.min(x , head.min), head);	<span class="comment">// Math.min函数选出最小值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//相当于返回栈中最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> head.min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断栈是否为空</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head == <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> min;</span><br><span class="line">    <span class="keyword">public</span> ListNode next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.min = min;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&ensp;&ensp;&ensp;&ensp;通过辅助类 ListNode 来实现栈的操作，原理上还是很好懂得，结合了栈与链表相似特性，可能效果不如双栈，但不失为一种方法。</p>
+<h1 id="方法二：压缩还原法（单栈）"><a href="#方法二：压缩还原法（单栈）" class="headerlink" title="方法二：压缩还原法（单栈）"></a>方法二：压缩还原法（单栈）</h1><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;每一次入栈的元素和上一个元素都会有一个差值，如果入栈元素比上一个大，差值就会为正值，如果比上一个小，差值就会为负。那么我们的栈中只需要存入他们的差值，用一个<code>min</code>辅助变量来存储当前最小值即可。</p>
+<p><strong>入栈</strong>：	</p>
+<ul>
+<li><p><strong>压缩</strong>：将要入栈的元素 x 减去当前最小值 min ，得到一个差值 diff ，栈中只储存该差值；</p>
+</li>
+<li><p><strong>更新</strong>：如果入栈的元素 x 比 min 还要小，就更新最小值，<code>min = x;</code></p>
+</li>
+<li><p><strong>初始</strong>：第一次入栈，栈中没有值，所以令 min &#x3D; x；</p>
+</li>
+</ul>
+<p><strong>出栈</strong>：</p>
+<ul>
+<li><strong>更新</strong>：如果栈中存储的差值 diff 是负数，说明出栈的元素是当前最小值 min ，需要把 min 值更新为上一个最小值 min &#x3D; min - diff ，否则，出栈的元素不是最小值，则不对 min 变量做任何操作；</li>
+<li><strong>还原</strong>：如果栈中存储的差值diff是正数，说明 top &#x3D; min + diff，否则，说明top元素本身是最小值 top &#x3D; min；</li>
+</ul>
+<p><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/%E5%8D%95%E4%B8%AA%E6%A0%88%E6%80%9D%E8%B7%AF%E5%9B%BE.5eg486f54o40.png" alt="单个栈思路图"></p>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="type">int</span> min;</span><br><span class="line">    <span class="comment">//压栈操作，设置一个辅助变量min存储最小值，栈中压入的是元素与最小值的差值，如果差值小于0，就更新最小值为当前元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x )</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">            min = x;</span><br><span class="line">            stack.push(x - min );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> x - min;</span><br><span class="line">            stack.push(diff);</span><br><span class="line">            <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )</span><br><span class="line">                min = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，弹出的差值如果是小于0的，那么说明最小值会变化，变成上一个最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )&#123;</span><br><span class="line">            min = min - diff;  <span class="comment">//更新min值，</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.peek();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> min;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min + diff;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>min：-1</p>
+</blockquote>
+<h2 id="算法主体-1"><a href="#算法主体-1" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="type">int</span> min;</span><br><span class="line">    <span class="comment">//压栈操作，设置一个辅助变量min存储最小值，栈中压入的是元素与最小值的差值，如果差值小于0，就更新最小值为当前元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x )</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">            min = x;</span><br><span class="line">            stack.push(x - min );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> x - min;</span><br><span class="line">            stack.push(diff);</span><br><span class="line">            <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )</span><br><span class="line">                min = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，弹出的差值如果是小于0的，那么说明最小值会变化，变成上一个最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )&#123;</span><br><span class="line">            min = min - diff;  <span class="comment">//更新min值，</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.peek();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> min;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min + diff;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&ensp;&ensp;&ensp;&ensp;只使用一个栈，通过栈存入差值，另外加入辅助变量的方法实现最小值的获取。</p>
+<h1 id="方法三：双栈"><a href="#方法三：双栈" class="headerlink" title="方法三：双栈"></a>方法三：双栈</h1><h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;第三个方法就很简单了，这里我们能用两个栈，那么栈1就用来存放需要压栈的元素，栈2就存放最小值。栈2的栈顶元素就是最小值。主要分清楚两个栈的功能就行。</p>
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        ms.push(-<span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈1存放的是需要压栈的值</span></span><br><span class="line">    Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈2存放的是最小值</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//栈2的栈顶元素就是最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack2.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//压栈操作，有更小的值就往栈2里压</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        stack1.push(x);</span><br><span class="line">        <span class="keyword">if</span>(stack2.empty() || x &lt; getMin())</span><br><span class="line">            stack2.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，将栈1的栈顶元素弹出并与栈2的栈顶元素比较，相等的话弹出最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack1.pop() == stack2.peek())</span><br><span class="line">            stack2.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack1.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>min：-2</p>
+</blockquote>
+<h2 id="算法主体-2"><a href="#算法主体-2" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈1存放的是需要压栈的值</span></span><br><span class="line">    Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈2存放的是最小值</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//栈2的栈顶元素就是最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack2.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//压栈操作，有更小的值就往栈2里压</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        stack1.push(x);</span><br><span class="line">        <span class="keyword">if</span>(stack2.empty() || x &lt; getMin())</span><br><span class="line">            stack2.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，将栈1的栈顶元素弹出并与栈2的栈顶元素比较，相等的话弹出最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack1.pop() == stack2.peek())</span><br><span class="line">            stack2.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack1.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&ensp;&ensp;&ensp;&ensp;两个栈的原理简化了很多，但另外两种方法的思想还是值得去研究一下得，可以更好地拓展思路。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>栈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法练-反转括号间字符串</title>
     <url>/2021/05/30/%E7%AE%97%E6%B3%95%E7%BB%83-%E5%8F%8D%E8%BD%AC%E6%8B%AC%E5%8F%B7%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给出一个字符串 s（仅含有小写英文字母和括号）。</p>
@@ -1214,72 +1280,6 @@
       <tags>
         <tag>Java</tag>
         <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法练-最小栈的实现</title>
-    <url>/2021/05/26/%E7%AE%97%E6%B3%95%E7%BB%83-%E6%9C%80%E5%B0%8F%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p>&ensp;&ensp;&ensp;&ensp;针对王道考研第三章（栈与队列）的拓展思考题–最小栈的实现。本文会探讨三种方法来实现，分别是辅助类、单个栈和双栈。</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>&ensp;&ensp;&ensp;&ensp;请设计一个栈，除了常规栈支持的pop与push函数以外，还支持min函数，该函数返回栈元素中的最小值。执行push、pop和min操作的时间复杂度必须为O(1)。</p>
-<blockquote>
-<p>注：这里要求的是常量级的时间里找到最小值，所以先排序、再查找是不行的，我们必须在需要的时候就要得到最小值</p>
-</blockquote>
-<h1 id="方法一：辅助类（链表类）"><a href="#方法一：辅助类（链表类）" class="headerlink" title="方法一：辅助类（链表类）"></a>方法一：辅助类（链表类）</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;我们知道，栈其实是一种操作受限的线性表，所以栈的一些操作可以通过链表来实现。这里要我们设计一个栈，而栈的实现我们可以使用链表，先定义一个链表类。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> min;  <span class="comment">//最小值</span></span><br><span class="line">  <span class="keyword">public</span> ListNode next;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.val = val;</span><br><span class="line">    <span class="built_in">this</span>.min = min;</span><br><span class="line">    <span class="built_in">this</span>.next = next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/%E9%93%BE%E8%A1%A8%E7%B1%BB%E6%80%9D%E8%B7%AF%E5%9B%BE.4f3ddq5y3qi0.png" alt="链表类思路图"></p>
-<p>&ensp;&ensp;&ensp;&ensp;栈中的最小值始终保存在链表的头结点，我们要获取最小值时直接返回<code>head.min</code>，即可在常量时间内完成。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(<span class="number">3</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ListNode head;	<span class="comment">//定义一个头结点</span></span><br><span class="line">    <span class="comment">//压栈操作，压入val、min</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())&#123;</span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, x, <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, Math.min(x , head.min), head);	<span class="comment">// Math.min函数选出最小值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//相当于返回栈中最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> head.min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断栈是否为空</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head == <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> min;</span><br><span class="line">    <span class="keyword">public</span> ListNode next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.min = min;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<blockquote>
-<p>min：-1</p>
-</blockquote>
-<h2 id="算法主体"><a href="#算法主体" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ListNode head;	<span class="comment">//定义一个头结点</span></span><br><span class="line">    <span class="comment">//压栈操作，压入val、min</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())&#123;</span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, x, <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(x, Math.min(x , head.min), head);	<span class="comment">// Math.min函数选出最小值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//相当于返回栈中最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;栈为空......&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> head.min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断栈是否为空</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head == <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> min;</span><br><span class="line">    <span class="keyword">public</span> ListNode next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> min, ListNode next)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.min = min;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>&ensp;&ensp;&ensp;&ensp;通过辅助类 ListNode 来实现栈的操作，原理上还是很好懂得，结合了栈与链表相似特性，可能效果不如双栈，但不失为一种方法。</p>
-<h1 id="方法二：压缩还原法（单栈）"><a href="#方法二：压缩还原法（单栈）" class="headerlink" title="方法二：压缩还原法（单栈）"></a>方法二：压缩还原法（单栈）</h1><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;每一次入栈的元素和上一个元素都会有一个差值，如果入栈元素比上一个大，差值就会为正值，如果比上一个小，差值就会为负。那么我们的栈中只需要存入他们的差值，用一个<code>min</code>辅助变量来存储当前最小值即可。</p>
-<p><strong>入栈</strong>：	</p>
-<ul>
-<li><p><strong>压缩</strong>：将要入栈的元素 x 减去当前最小值 min ，得到一个差值 diff ，栈中只储存该差值；</p>
-</li>
-<li><p><strong>更新</strong>：如果入栈的元素 x 比 min 还要小，就更新最小值，<code>min = x;</code></p>
-</li>
-<li><p><strong>初始</strong>：第一次入栈，栈中没有值，所以令 min &#x3D; x；</p>
-</li>
-</ul>
-<p><strong>出栈</strong>：</p>
-<ul>
-<li><strong>更新</strong>：如果栈中存储的差值 diff 是负数，说明出栈的元素是当前最小值 min ，需要把 min 值更新为上一个最小值 min &#x3D; min - diff ，否则，出栈的元素不是最小值，则不对 min 变量做任何操作；</li>
-<li><strong>还原</strong>：如果栈中存储的差值diff是正数，说明 top &#x3D; min + diff，否则，说明top元素本身是最小值 top &#x3D; min；</li>
-</ul>
-<p><img src="https://jsd.cdn.zzko.cn/gh/FLASHyan/image@master/img-path/%E5%8D%95%E4%B8%AA%E6%A0%88%E6%80%9D%E8%B7%AF%E5%9B%BE.5eg486f54o40.png" alt="单个栈思路图"></p>
-<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="type">int</span> min;</span><br><span class="line">    <span class="comment">//压栈操作，设置一个辅助变量min存储最小值，栈中压入的是元素与最小值的差值，如果差值小于0，就更新最小值为当前元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x )</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">            min = x;</span><br><span class="line">            stack.push(x - min );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> x - min;</span><br><span class="line">            stack.push(diff);</span><br><span class="line">            <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )</span><br><span class="line">                min = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，弹出的差值如果是小于0的，那么说明最小值会变化，变成上一个最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )&#123;</span><br><span class="line">            min = min - diff;  <span class="comment">//更新min值，</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.peek();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> min;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min + diff;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<blockquote>
-<p>min：-1</p>
-</blockquote>
-<h2 id="算法主体-1"><a href="#算法主体-1" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="type">int</span> min;</span><br><span class="line">    <span class="comment">//压栈操作，设置一个辅助变量min存储最小值，栈中压入的是元素与最小值的差值，如果差值小于0，就更新最小值为当前元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x )</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">            min = x;</span><br><span class="line">            stack.push(x - min );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> x - min;</span><br><span class="line">            stack.push(diff);</span><br><span class="line">            <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )</span><br><span class="line">                min = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，弹出的差值如果是小于0的，那么说明最小值会变化，变成上一个最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span> )&#123;</span><br><span class="line">            min = min - diff;  <span class="comment">//更新min值，</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> stack.peek();</span><br><span class="line">        <span class="keyword">if</span>(diff &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> min;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min + diff;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>&ensp;&ensp;&ensp;&ensp;只使用一个栈，通过栈存入差值，另外加入辅助变量的方法实现最小值的获取。</p>
-<h1 id="方法三：双栈"><a href="#方法三：双栈" class="headerlink" title="方法三：双栈"></a>方法三：双栈</h1><h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>&ensp;&ensp;&ensp;&ensp;第三个方法就很简单了，这里我们能用两个栈，那么栈1就用来存放需要压栈的元素，栈2就存放最小值。栈2的栈顶元素就是最小值。主要分清楚两个栈的功能就行。</p>
-<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MinStack</span> <span class="variable">ms</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MinStack</span>();</span><br><span class="line">        ms.push(<span class="number">1</span>);</span><br><span class="line">        ms.push(<span class="number">2</span>);</span><br><span class="line">        ms.push(-<span class="number">1</span>);</span><br><span class="line">        ms.push(-<span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;min:&quot;</span> + ms.getMin());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈1存放的是需要压栈的值</span></span><br><span class="line">    Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈2存放的是最小值</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//栈2的栈顶元素就是最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack2.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//压栈操作，有更小的值就往栈2里压</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        stack1.push(x);</span><br><span class="line">        <span class="keyword">if</span>(stack2.empty() || x &lt; getMin())</span><br><span class="line">            stack2.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，将栈1的栈顶元素弹出并与栈2的栈顶元素比较，相等的话弹出最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack1.pop() == stack2.peek())</span><br><span class="line">            stack2.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack1.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<blockquote>
-<p>min：-2</p>
-</blockquote>
-<h2 id="算法主体-2"><a href="#算法主体-2" class="headerlink" title="算法主体"></a>算法主体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈1存放的是需要压栈的值</span></span><br><span class="line">    Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();  <span class="comment">//栈2存放的是最小值</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//栈2的栈顶元素就是最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack2.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//压栈操作，有更小的值就往栈2里压</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        stack1.push(x);</span><br><span class="line">        <span class="keyword">if</span>(stack2.empty() || x &lt; getMin())</span><br><span class="line">            stack2.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//出栈操作，将栈1的栈顶元素弹出并与栈2的栈顶元素比较，相等的话弹出最小值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack1.pop() == stack2.peek())</span><br><span class="line">            stack2.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack1.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>&ensp;&ensp;&ensp;&ensp;两个栈的原理简化了很多，但另外两种方法的思想还是值得去研究一下得，可以更好地拓展思路。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
